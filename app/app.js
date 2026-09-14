@@ -1,6 +1,9 @@
 const divM = document.querySelector("#divMostrar");
 const divF = document.querySelector("#divFuncion");
 
+const pMM = document.querySelector("#pMM");
+let tablaMulti = document.querySelector("#tablaMulti");
+
 let player = "Joel Caballero";
 const MAX_TIRADAS = 3;
 
@@ -35,4 +38,38 @@ function SOperacion (){
 }
 
 subFun.addEventListener("click", SOperacion);
+
+
+const num = document.querySelector("#numMM");
+
+function comprobarNum() {
+
+    tablaMulti.innerHTML = "";
+
+    const num = Number(document.querySelector("#numMM").value);
+
+    if(num < 0) {
+        pMM.innerHTML= "El número ha de ser més gran que 0";
+    } else if(num > 10) {
+        pMM.innerHTML= "El número ha de ser més petit que 11";
+    } else {
+            
+            
+        let lin = '';
+        for (let i = 1; i <= 10; i++) {
+            lin += `<tr><td class="f">${num} * ${i}</td><td>${num*i}</td></tr>`;
+        }
+
+        html = `
+            ${lin}
+        `;
+
+        tablaMulti.innerHTML = html;
+    }
+
+}
+
+numMM.addEventListener("change", comprobarNum);
+
+
 
