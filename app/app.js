@@ -157,6 +157,9 @@ const caselles = ["Start", "Poble", "Casa", "Bosc", "Mola", "Final"];
 function moverCasilla(num) {
     let casilla = document.querySelector("#casilla");
     casilla.textContent = "Has caido en: " + caselles[num-1];
+
+    jugadores[0].posicion+=num;
+    console.log(jugadores[0]);
 }
 
 ///////////////////////////////////////////////////////
@@ -253,5 +256,20 @@ function renderTablero(){
     divTab.innerHTML = html;
 
 };
+
+
+
+///////////////////////////////////////////////////////
+
+let jugadores = [
+    {
+        name: "",
+        posicion: 0,
+        activo: true
+    }
+];
+
+
+
 
 renderTablero();
