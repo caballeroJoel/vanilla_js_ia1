@@ -1,6 +1,9 @@
 const divM = document.querySelector("#divMostrar");
 const divF = document.querySelector("#divFuncion");
 const divE = document.querySelector("#divEstado");
+const divC = document.querySelector("#divCambio");
+
+/////////////////////////////////////////////////////
 
 const pMM = document.querySelector("#pMM");
 let tablaMulti = document.querySelector("#tablaMulti");
@@ -12,6 +15,7 @@ divM.innerHTML += "Bienvenido, "+player+" tienes "+ MAX_TIRADAS +" tiradas<br>";
 player = "Pepe";
 divM.innerHTML += "Bienvenido, "+player+" tienes "+ MAX_TIRADAS +" tiradas<br>";
 
+///////////////////////////////////////////////////////
 
 const subFun = document.querySelector("#subFuncion");
 
@@ -40,6 +44,7 @@ function SOperacion (){
 
 subFun.addEventListener("click", SOperacion);
 
+///////////////////////////////////////////////////////
 
 const num = document.querySelector("#numMM");
 
@@ -72,8 +77,7 @@ function comprobarNum() {
 
 numMM.addEventListener("change", comprobarNum);
 
-
-
+///////////////////////////////////////////////////////
 
 let estado = "inicio";
 // let estado = "turnoA";
@@ -100,4 +104,16 @@ function cambioEstado() {
     divE.innerHTML = html;
 }
 
-cambioEstado();
+cambioEstado(); 
+
+///////////////////////////////////////////////////////
+
+const spanC = document.querySelector("#spanChange");
+
+spanC.addEventListener("click", function() {
+    spanC.textContent = "Me has presionado!!"
+    spanC.classList.toggle("tog");
+});
+
+///////////////////////////////////////////////////////
+
