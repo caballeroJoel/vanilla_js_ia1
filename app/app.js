@@ -2,6 +2,7 @@ const divM = document.querySelector("#divMostrar");
 const divF = document.querySelector("#divFuncion");
 const divE = document.querySelector("#divEstado");
 const divC = document.querySelector("#divCambio");
+const divD = document.querySelector("#divDado");
 
 /////////////////////////////////////////////////////
 
@@ -117,3 +118,17 @@ spanC.addEventListener("click", function() {
 
 ///////////////////////////////////////////////////////
 
+let divDadoCara = document.querySelector("#divDadoCara");
+
+divDadoCara.addEventListener("click", function() {
+    let num = Math.floor((Math.random() * 6) + 1);
+    let html = '';
+    
+    for (let i = 0; i < num; i++) {
+        html += '<div class="punto"></div>';
+    }
+
+    divDadoCara.innerHTML = html;
+    divDadoCara.className = `dado d${num}`;
+
+});
