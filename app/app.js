@@ -5,6 +5,7 @@ const divC = document.querySelector("#divCambio");
 const divD = document.querySelector("#divDado");
 const divFP = document.querySelector("#divFormPlayer");
 const divCas = document.querySelector("#divCasillas");
+const divTab = document.querySelector("#divTablero");
 
 /////////////////////////////////////////////////////
 
@@ -233,3 +234,24 @@ let nextQ = document.querySelector("#nextQ").addEventListener("click", function(
 });
 
 displayPregunta();
+
+///////////////////////////////////////////////////////
+
+const tablero = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+function renderTablero(){
+    let html = '<table border="1" class="tablero"><tr>';
+    for(let i=0; i<tablero.length; i++){
+        html+= `
+            <td>
+                <p>${i}</p>
+            </td>
+        `;
+    }
+    html+="</tr></table>";
+
+    divTab.innerHTML = html;
+
+};
+
+renderTablero();
