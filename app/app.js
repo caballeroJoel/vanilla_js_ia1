@@ -3,6 +3,7 @@ const divF = document.querySelector("#divFuncion");
 const divE = document.querySelector("#divEstado");
 const divC = document.querySelector("#divCambio");
 const divD = document.querySelector("#divDado");
+const divFP = document.querySelector("#divFormPlayer");
 
 /////////////////////////////////////////////////////
 
@@ -127,8 +128,20 @@ divDadoCara.addEventListener("click", function() {
     for (let i = 0; i < num; i++) {
         html += '<div class="punto"></div>';
     }
-
+    
     divDadoCara.innerHTML = html;
     divDadoCara.className = `dado d${num}`;
+    
+});
+
+///////////////////////////////////////////////////////
+
+let subNamePlayer = document.querySelector("#subNamePlayer").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    let name = document.querySelector("#namePlayer").value;
+    let hello = document.querySelector("#helloPlayer");
+
+    hello.textContent = `Juagdor 1, ${name}`;
 
 });
