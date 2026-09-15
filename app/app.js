@@ -160,3 +160,76 @@ function moverCasilla(num) {
 
 ///////////////////////////////////////////////////////
 
+const preguntas = [
+    {
+        pregunta: "Raíz cuadrada de 121?",
+        respuestas: ["15", "11", "12"],
+        correcta: "11"
+    },
+    {
+        pregunta: "¿Cuál es el río más largo del mundo?",
+        respuestas: ["Amazonas", "Nilo", "Misisipi"],
+        correcta: "Amazonas"
+    },
+    {
+        pregunta: "¿En qué año llegó el ser humano a la Luna?",
+        respuestas: ["1975", "1959", "1969"],
+        correcta: "1969"
+    },
+    {
+        pregunta: "¿Cuál es el océano más grande del planeta?",
+        respuestas: ["Océano Atlántico", "Océano Pacífico", "Océano Índico"],
+        correcta: "Océano Pacífico"
+    },
+    {
+        pregunta: "¿Quién pintó la Mona Lisa?",
+        respuestas: ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci"],
+        correcta: "Leonardo da Vinci"
+    },
+    {
+        pregunta: "¿Cuál es el planeta más grande del sistema solar?",
+        respuestas: ["Saturno", "Júpiter", "Marte"],
+        correcta: "Júpiter"
+    }
+];
+
+let disPregunta = document.querySelector("#disPregunta");
+let numPreg = 0;
+
+function displayPregunta() {
+    let html = "";
+    let html1 = "";
+
+    for (let i = 0; i < 3; i++) {
+        html1 += `<button class="respPreg" value="${preguntas[numPreg].respuestas[i]}">${preguntas[numPreg].respuestas[i]}</button>`;
+    }
+
+    html = `
+        <p>${preguntas[numPreg].pregunta}</p>
+        ${html1}
+    `;
+
+    disPregunta.innerHTML = html;
+}
+
+disPregunta.addEventListener("click", function(e) {
+    if (e.target.classList.contains("respPreg")) {
+        let respuestaPregunta = document.querySelector("#respuestaPregunta");
+        if(e.target.value == preguntas[numPreg].correcta) {
+            respuestaPregunta.textContent = "Has acertado.";
+        } else {
+            respuestaPregunta.textContent = "Respuesta incorrecta.";
+        }
+    }
+});
+
+let nextQ = document.querySelector("#nextQ").addEventListener("click", function() {
+    numPreg++;
+    if(numPreg==5) {
+        numPreg=0;
+    }
+    let respuestaPregunta = document.querySelector("#respuestaPregunta").textContent="";
+    displayPregunta();
+});
+
+displayPregunta();
