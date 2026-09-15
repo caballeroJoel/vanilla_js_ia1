@@ -4,6 +4,7 @@ const divE = document.querySelector("#divEstado");
 const divC = document.querySelector("#divCambio");
 const divD = document.querySelector("#divDado");
 const divFP = document.querySelector("#divFormPlayer");
+const divCas = document.querySelector("#divCasillas");
 
 /////////////////////////////////////////////////////
 
@@ -132,6 +133,8 @@ divDadoCara.addEventListener("click", function() {
     divDadoCara.innerHTML = html;
     divDadoCara.className = `dado d${num}`;
     
+    moverCasilla(num);
+
 });
 
 ///////////////////////////////////////////////////////
@@ -145,3 +148,15 @@ let subNamePlayer = document.querySelector("#subNamePlayer").addEventListener("c
     hello.textContent = `Juagdor 1, ${name}`;
 
 });
+
+///////////////////////////////////////////////////////
+
+const caselles = ["Start", "Poble", "Casa", "Bosc", "Mola", "Final"];
+
+function moverCasilla(num) {
+    let casilla = document.querySelector("#casilla");
+    casilla.textContent = "Has caido en: " + caselles[num-1];
+}
+
+///////////////////////////////////////////////////////
+
