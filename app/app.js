@@ -1,5 +1,6 @@
 const divM = document.querySelector("#divMostrar");
 const divF = document.querySelector("#divFuncion");
+const divE = document.querySelector("#divEstado");
 
 const pMM = document.querySelector("#pMM");
 let tablaMulti = document.querySelector("#tablaMulti");
@@ -48,7 +49,7 @@ function comprobarNum() {
 
     const num = Number(document.querySelector("#numMM").value);
 
-    if(num < 0) {
+    if(num < 1) {
         pMM.innerHTML= "El número ha de ser més gran que 0";
     } else if(num > 10) {
         pMM.innerHTML= "El número ha de ser més petit que 11";
@@ -73,3 +74,30 @@ numMM.addEventListener("change", comprobarNum);
 
 
 
+
+let estado = "inicio";
+// let estado = "turnoA";
+// let estado = "turnoB";
+// let estado = "final";
+
+let html = "";
+
+function cambioEstado() {
+    switch(estado) {
+        case "inicio":
+            html = "Inicio de la partida!";
+            break;
+        case "turnoA":
+            html = "Es el torn del jugador A";
+            break;
+        case "turnoB":
+            html = "Es el torn del jugador B";
+            break;
+        case "final":
+            html = "Final de la partida!";
+            break;
+    }
+    divE.innerHTML = html;
+}
+
+cambioEstado();
