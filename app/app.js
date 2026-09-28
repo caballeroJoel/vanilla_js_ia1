@@ -289,5 +289,9 @@ renderTablero();
 
 /////////////////////////////////////////////////////
 
+let hoy = new Date(); // 1. Creamos el objeto fecha una sola vez
 
+let dataPartida = String(hoy.getDate())+ "-" + String(hoy.getMonth() + 1) + "-" + hoy.getFullYear();
+
+console.log("Partida iniciada: "+dataPartida);
 
