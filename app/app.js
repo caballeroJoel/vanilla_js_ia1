@@ -269,7 +269,17 @@ let jugadores = [
     }
 ];
 
+/////////////////////////////////////////////////////////
 
+let turno=1;
+
+document.addEventListener("keypress", (e) => {
+    if(e.key == "k") {
+        
+        console.log(Math.floor(Math.random() * 6) + 1 + " Turno "+turno);
+        turno++;
+    }
+});
 
 
 renderTablero();
