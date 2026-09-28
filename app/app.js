@@ -136,6 +136,9 @@ divDadoCara.addEventListener("click", function() {
     
     moverCasilla(num);
 
+    let mensaje = `Jugador ${jugadores.name} ha tret ${num}`;
+    console.log(mensaje.toUpperCase());
+
 });
 
 ///////////////////////////////////////////////////////
@@ -283,3 +286,8 @@ document.addEventListener("keypress", (e) => {
 
 
 renderTablero();
+
+/////////////////////////////////////////////////////
+
+
+
