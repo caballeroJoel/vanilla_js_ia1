@@ -1,42 +1,71 @@
-.predDiv {
-    padding: 16px;
-    margin: 6px 0px;
-    
-    width: 30%;
-    
-    border: 1px solid black;
-    border-radius: 4px;
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: rgba(126, 126, 245, 0.801);
+}
+main {
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+    align-items: center;
 }
 
-.tableMulti {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: sans-serif;
-  text-align: center;
+.tablero {
+	position: relative;
+
+	width: 75%;
+	height: 80%;
+
+	background-image: url(./../sources/tablero.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: auto 100%;
 }
 
-.tableMulti td {
-  padding: 10px;
-  border: 1px solid #ccc;
+.tablero .ficha {
+	position: absolute;
+
+	width: 35px;
+	height: 35px;
+
+	border-radius: 50%;
+	border: 1px solid black;
 }
 
-.tableMulti td.f {
-  background-color: rgba(255, 149, 149, 0.459);
+.ficha.rd {
+	top: 650px;
+	left: 395px;
+
+	background-color: red;
+
+	--movimientoX: 0px;
+	--movimientoY: 0px;
+	transform: translateX(var(--movimientoX)) translateY(var(--movimientoY));
+	transition: .5s;
+
+}
+.ficha.gr {
+	top: 650px;
+	left: 445px;
+
+	background-color: green;
+
+	--movimientoX: 0px;
+	--movimientoY: 0px;
+	transform: translateX(var(--movimientoX)) translateY(var(--movimientoY));
+	transition: .5s;
 }
 
-.tog {
-  font-weight: bold;
-  background-color: rgba(219, 114, 114, 0.801);
-}
+.hud {
+	display: flex;
+	flex-direction: column;	
+    align-items: center;
+	gap: 12px;
 
-#spanChange {
-  margin: 6px;
-  padding: 6px;
-
-  border: 1px solid black;
-  border-radius: 4px;
-
-  cursor: pointer;
 }
 
 .dado {
@@ -52,6 +81,8 @@
 
   border: 1px solid black;
   border-radius: 4px;
+
+  background-color: white;
 
   .punto {
     position: relative;
@@ -92,23 +123,3 @@
 .d6 .punto:nth-child(4){ grid-area: 1/3;}
 .d6 .punto:nth-child(5){ grid-area: 2/3;}
 .d6 .punto:nth-child(6){ grid-area: 3/3;}
-
-
-
-
-.tablero {
-  td {
-    width: 80px;
-    height: 80px;
-
-    text-align: center;
-
-    p{
-      margin: 0;
-    }
-  }
-}
-
-.player1 {
-  background-color: #32a852;
-}
