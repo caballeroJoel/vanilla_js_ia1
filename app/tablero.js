@@ -1,6 +1,7 @@
 const tablero = [
     { 
         casilla: 0, 
+        evento: "", 
         fichas: { 
             A: { 
                 x: "395px", 
@@ -14,6 +15,7 @@ const tablero = [
     },
     { 
         casilla: 1, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "410px", 
@@ -27,6 +29,7 @@ const tablero = [
     },
     { 
         casilla: 2, 
+        evento: "21", 
         fichas: { 
             A: { 
                 x: "415px", 
@@ -39,7 +42,8 @@ const tablero = [
         } 
     },
     { 
-        casilla: 3, 
+        casilla: 3,
+        evento: "pregunta",  
         fichas: { 
             A: { 
                 x: "430px", 
@@ -53,6 +57,7 @@ const tablero = [
     },
     { 
         casilla: 4, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "435px", 
@@ -66,6 +71,7 @@ const tablero = [
     },
     { 
         casilla: 5, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "445px", 
@@ -79,6 +85,7 @@ const tablero = [
     },
     { 
         casilla: 6, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "455px", 
@@ -92,6 +99,7 @@ const tablero = [
     },
     { 
         casilla: 7, 
+        evento: "11", 
         fichas: { 
             A: { 
                 x: "595px", 
@@ -105,6 +113,7 @@ const tablero = [
     },
     { 
         casilla: 8, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "650px", 
@@ -118,6 +127,7 @@ const tablero = [
     },
     { 
         casilla: 9, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "755px", 
@@ -131,6 +141,7 @@ const tablero = [
     },
     { 
         casilla: 10, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "825px", 
@@ -144,6 +155,7 @@ const tablero = [
     },
     { 
         casilla: 11, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "880px", 
@@ -157,6 +169,7 @@ const tablero = [
     },
     { 
         casilla: 12, 
+        evento: "0", 
         fichas: { 
             A: { 
                 x: "970px", 
@@ -170,6 +183,7 @@ const tablero = [
     },
     { 
         casilla: 13, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "985px", 
@@ -183,6 +197,7 @@ const tablero = [
     },
     { 
         casilla: 14, 
+        evento: "29", 
         fichas: { 
             A: { 
                 x: "995px", 
@@ -196,6 +211,7 @@ const tablero = [
     },
     { 
         casilla: 15, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "1005px", 
@@ -209,6 +225,7 @@ const tablero = [
     },
     { 
         casilla: 16, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "1045px", 
@@ -222,6 +239,7 @@ const tablero = [
     },
     { 
         casilla: 17, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "945px", 
@@ -235,6 +253,7 @@ const tablero = [
     },
     { 
         casilla: 18, 
+        evento: "16", 
         fichas: { 
             A: { 
                 x: "775px", 
@@ -248,6 +267,7 @@ const tablero = [
     },
     { 
         casilla: 19, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "665px", 
@@ -261,6 +281,7 @@ const tablero = [
     },
     { 
         casilla: 20, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "525px", 
@@ -274,6 +295,7 @@ const tablero = [
     },
     { 
         casilla: 21, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "515px", 
@@ -287,6 +309,7 @@ const tablero = [
     },
     { 
         casilla: 22, 
+        evento: "24", 
         fichas: { 
             A: { 
                 x: "530px", 
@@ -300,6 +323,7 @@ const tablero = [
     },
     { 
         casilla: 23, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "580px", 
@@ -313,6 +337,7 @@ const tablero = [
     },
     { 
         casilla: 24, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "655px", 
@@ -326,6 +351,7 @@ const tablero = [
     },
     { 
         casilla: 25, 
+        evento: "9", 
         fichas: { 
             A: { 
                 x: "715px", 
@@ -339,6 +365,7 @@ const tablero = [
     },
     { 
         casilla: 26, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "795px", 
@@ -352,6 +379,7 @@ const tablero = [
     },
     { 
         casilla: 27, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "935px", 
@@ -365,6 +393,7 @@ const tablero = [
     },
     { 
         casilla: 28, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "940px", 
@@ -378,6 +407,7 @@ const tablero = [
     },
     { 
         casilla: 29, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "945px", 
@@ -391,6 +421,7 @@ const tablero = [
     },
     { 
         casilla: 30, 
+        evento: "27", 
         fichas: { 
             A: { 
                 x: "895px", 
@@ -404,6 +435,7 @@ const tablero = [
     },
     { 
         casilla: 31, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "795px", 
@@ -417,6 +449,7 @@ const tablero = [
     },
     { 
         casilla: 32, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "720px", 
@@ -430,6 +463,7 @@ const tablero = [
     },
     { 
         casilla: 33, 
+        evento: "20", 
         fichas: { 
             A: { 
                 x: "665px", 
@@ -443,6 +477,7 @@ const tablero = [
     },
     { 
         casilla: 34, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "665px", 
@@ -456,6 +491,7 @@ const tablero = [
     },
     { 
         casilla: 35, 
+        evento: "pregunta", 
         fichas: { 
             A: { 
                 x: "725px", 
@@ -469,6 +505,7 @@ const tablero = [
     },
     { 
         casilla: 36, 
+        evento: "pregunta",     
         fichas: { 
             A: { 
                 x: "810px", 
