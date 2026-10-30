@@ -6,6 +6,8 @@ const turnoActualPartida = document.querySelector("#turnoActualPartida");
 const numTurnosPartida = document.querySelector("#numTurnosPartida");
 const divDadoCara = document.querySelector("#divDadoCara");
 
+const jsonPartida = document.querySelector("#jsonPartida");
+
 let moviendo = false;
 let partidaTerminada = false;
 
@@ -26,6 +28,21 @@ const partida = {
     turnoActual: "A"
 };
 
+function actualizarJson() {
+    const estado = {
+        turnos: partida.turnos,
+        turnoActual: partida.turnoActual,
+        moviendo: moviendo,
+        partidaTerminada: partidaTerminada,
+        fichas: {
+            A: { casilla: fichaA.casilla },
+            B: { casilla: fichaB.casilla }
+        }
+    };
+
+    jsonPartida.textContent = JSON.stringify(estado, null, 2);
+}
+actualizarJson();
 
 function avanza(ficha) {
     if (ficha.casilla >= tablero.length - 1) {
@@ -38,6 +55,8 @@ function avanza(ficha) {
 
     ficha.ficha.style.left = posicion.x;
     ficha.ficha.style.top = posicion.y;
+
+    actualizarJson();
 }
 
 
@@ -52,6 +71,8 @@ function retro(ficha) {
 
     ficha.ficha.style.left = posicion.x;
     ficha.ficha.style.top = posicion.y;
+
+    actualizarJson();
 }
 
 
@@ -73,6 +94,8 @@ function moverRecur(ficha, movimientos, fin) {
     setTimeout(() => {
         moverRecur(ficha, movimientos, fin);
     }, 500);
+
+    actualizarJson();
 }
 
 
@@ -174,6 +197,40 @@ function activarCasilla(ficha, salida) {
                                 </div>
                             </div>
                         `;
+
+                        const btnVolverJugar = document.querySelector("#btnVolverJugar");
+
+                        btnVolverJugar.addEventListener("click", reiniciarPartida);
+
+                        function reiniciarPartida() {
+
+                            fichaA.casilla = 0;
+                            fichaB.casilla = 0;
+
+
+                            [fichaA, fichaB].forEach(ficha => {
+                                const posicion = tablero[0].fichas[ficha.letra];
+
+                                ficha.ficha.style.left = posicion.x;
+                                ficha.ficha.style.top = posicion.y;
+                            });
+
+                            partida.turnos = 0;
+                            partida.turnoActual = "A";
+
+                            numTurnosPartida.textContent = "0";
+                            turnoActualPartida.textContent = "A";
+
+                            moviendo = false;
+                            partidaTerminada = false;
+
+                            divDadoCara.innerHTML = "<span>Click</span>";
+                            divDadoCara.className = "dado";
+
+                            document.querySelector("#divPregunta").classList.add("hidden");
+                            document.querySelector("#divVictoria").classList.add("hidden");
+                        }
+
                     }
 
                     salida(correcta);
@@ -200,6 +257,7 @@ function activarCasilla(ficha, salida) {
         });
 
     }
+    actualizarJson();
 }
 
 function cambiarTurno() {
@@ -208,6 +266,8 @@ function cambiarTurno() {
         partida.turnoActual === "A" ? "B" : "A";
 
     turnoActualPartida.textContent = partida.turnoActual;
+
+    actualizarJson();
 }
 
 function finalizarTurno() {
@@ -218,6 +278,8 @@ function finalizarTurno() {
 
     divDadoCara.innerHTML = "<span>Click</span>";
     moviendo = false;
+
+    actualizarJson();
 }
 
 divDadoCara.addEventListener("click", function() {
@@ -271,41 +333,6 @@ divDadoCara.addEventListener("click", function() {
 
     }
 
+    actualizarJson();
+
 });
-
-const btnVolverJugar = document.querySelector("#btnVolverJugar");
-
-btnVolverJugar.addEventListener("click", reiniciarPartida);
-
-function reiniciarPartida() {
-
-    // Reiniciar las posiciones de las fichas
-    fichaA.casilla = 0;
-    fichaB.casilla = 0;
-
-    // Colocar las fichas en la casilla inicial
-    [fichaA, fichaB].forEach(ficha => {
-        const posicion = tablero[0].fichas[ficha.letra];
-
-        ficha.ficha.style.left = posicion.x;
-        ficha.ficha.style.top = posicion.y;
-    });
-
-    // Reiniciar los datos de la partida
-    partida.turnos = 0;
-    partida.turnoActual = "A";
-
-    numTurnosPartida.textContent = "0";
-    turnoActualPartida.textContent = "A";
-
-    // Desbloquear el dado y restablecer su apariencia
-    moviendo = false;
-    partidaTerminada = false;
-
-    divDadoCara.innerHTML = "<span>Click</span>";
-    divDadoCara.className = "dado";
-
-    // Ocultar las ventanas de pregunta y victoria
-    document.querySelector("#divPregunta").classList.add("hidden");
-    document.querySelector("#divVictoria").classList.add("hidden");
-}
